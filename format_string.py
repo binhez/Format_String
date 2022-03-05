@@ -9,6 +9,7 @@ Original file is located at
 
 def format_string(template, parameters):
     # you code here…
+    for
     for key in parameters:
       tempkey = "{" + key + "}"
       template = template.replace(tempkey, parameters[key])
@@ -19,4 +20,10 @@ assert format_string("Hi {name}, welcome to {company}!",
                     == "Hi Binh, welcome to PrimeData!"
 assert format_string("Hi {name}, welcome to {company}!",
                     {"name": "{company}", "company": "PrimeData"}) \
-       == "Hi PrimeData, welcome to PrimeData!"
+                    == "Hi PrimeData, welcome to PrimeData!"
+assert format_string("Hi {name}, welcome to {company}!",
+                    {"name": "{company}","company": "Binh", "company": "PrimeData"}) \
+                    == "Hi PrimData, welcome to PrimeData!"
+assert format_string("Hi {name}, welcome to {company}!",
+                    {}) \
+                    == "Hi {name}, welcome to {company}!"
